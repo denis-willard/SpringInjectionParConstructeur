@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="informaticien" class="fr.natsystem.formation.bean.Informaticien" />
+
+	<bean id="avocat" class="fr.natsystem.formation.bean.Avocat" />
+	
+	<bean id="metier1" class="fr.natsystem.formation.bean.Metier">
+		<constructor-arg value="independant" name="contrat"/>
+		<constructor-arg ref="informaticien" name="profession"/>
+	</bean>	
+	
+	<bean id="metier2" class="fr.natsystem.formation.bean.Metier">
+		<constructor-arg value="procureur" name="contrat"/>
+		<constructor-arg ref="avocat" name="profession"/>
+	</bean>	
+	
+	<bean id="metier3" class="fr.natsystem.formation.bean.Metier">
+		<constructor-arg value="DSI" name="contrat"/>
+		<constructor-arg ref="informaticien" name="profession"/>
+	</bean>	
+</beans>
